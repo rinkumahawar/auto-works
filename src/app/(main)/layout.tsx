@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Auto-Works - Your Complete Automotive Solution",
   description: "From emergency roadside assistance to buying cars and spare parts - everything you need for your vehicle in one smart platform.",
 };
 
-export default function RootLayout({
+export default function MainLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <div className="font-sans min-h-screen bg-white">
+      <Header />
+      <main className="flex-1">
         {children}
-      </body>
-    </html>
+      </main>
+      <Footer />
+    </div>
   );
 }
