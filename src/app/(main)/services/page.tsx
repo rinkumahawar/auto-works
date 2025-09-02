@@ -74,7 +74,7 @@ const ServicesPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
               Professional automotive solutions delivered right to your location. 
-              From diagnostics to major repairs, we've got you covered with expert 
+              From diagnostics to major repairs, we&apos;ve got you covered with expert 
               mechanics and quality service.
             </p>
             <div className="flex justify-center space-x-4">
@@ -140,7 +140,7 @@ const ServicesPage: React.FC = () => {
                 Need a Custom Service?
               </h3>
               <p className="text-gray-600 mb-6">
-                Can't find the service you need? Contact us for custom automotive solutions 
+                Can&apos;t find the service you need? Contact us for custom automotive solutions 
                 tailored to your specific requirements.
               </p>
               <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">

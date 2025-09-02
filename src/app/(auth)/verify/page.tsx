@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 const VerifyPage: React.FC = () => {
   const [otp, setOtp] = useState(['6', '7', '', '']);
-  const [phoneNumber, setPhoneNumber] = useState('+91 987987333');
+  const [phoneNumber] = useState('+91 987987333');
   const [canResend, setCanResend] = useState(true);
   const [countdown, setCountdown] = useState(0);
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
@@ -128,7 +128,7 @@ const VerifyPage: React.FC = () => {
             {/* Resend OTP */}
             <div className="text-center">
               <p className="text-sm text-gray-500">
-                Didn't you receive the OTP?{' '}
+                Didn&apos;t you receive the OTP?{' '}
                 {canResend ? (
                   <button
                     type="button"

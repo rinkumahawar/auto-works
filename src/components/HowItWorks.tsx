@@ -44,7 +44,7 @@ const HowItWorks: React.FC = () => {
             How Road Smart Works
           </h2>
           <p className="text-xl font-inter text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Get help in 4 simple steps. From booking to completion, we've made automotive services as easy as possible.
+            Get help in 4 simple steps. From booking to completion, we&apos;ve made automotive services as easy as possible.
           </p>
         </div>
 

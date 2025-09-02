@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import intlTelInput from 'intl-tel-input';
 import 'intl-tel-input/build/css/intlTelInput.css';
@@ -65,11 +65,22 @@ const customStyles = `
   }
 `;
 
+type SelectedCountryData = {
+  name?: string;
+  iso2?: string;
+  dialCode?: string;
+};
+
+interface IntlTelInputInstance {
+  getSelectedCountryData: () => SelectedCountryData;
+  getNumber: () => string;
+  destroy: () => void;
+}
+
 const LoginPage: React.FC = () => {
   const router = useRouter();
-  const [phoneNumber, setPhoneNumber] = useState('');
   const phoneInputRef = useRef<HTMLInputElement>(null);
-  const intlTelInputRef = useRef<any>(null);
+  const intlTelInputRef = useRef<IntlTelInputInstance | null>(null);
 
   useEffect(() => {
     if (phoneInputRef.current) {
@@ -77,7 +88,7 @@ const LoginPage: React.FC = () => {
       intlTelInputRef.current = intlTelInput(phoneInputRef.current, {
         initialCountry: 'us',
         separateDialCode: true,
-        customPlaceholder: function(selectedCountryPlaceholder: string, selectedCountryData: any) {
+        customPlaceholder: function(selectedCountryPlaceholder: string, selectedCountryData: SelectedCountryData) {
           return selectedCountryPlaceholder;
         },
       });
@@ -85,7 +96,7 @@ const LoginPage: React.FC = () => {
       // Add event listener for country change
       phoneInputRef.current.addEventListener('countrychange', () => {
         // Handle country change if needed
-        console.log('Country changed to:', intlTelInputRef.current.getSelectedCountryData());
+        console.log('Country changed to:', intlTelInputRef.current?.getSelectedCountryData());
       });
     }
 
@@ -179,7 +190,7 @@ const LoginPage: React.FC = () => {
           {/* Additional Links */}
           <div className="mt-8 text-center space-y-3">
             <p className="text-sm text-gray-500">
-              Don't have an account?{' '}
+              Don&apos;t have an account?{' '}
               <Link href="/signup" className="text-red-600 hover:text-red-700 font-medium">
                 Sign up
               </Link>
