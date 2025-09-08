@@ -1,34 +1,28 @@
 'use client';
 
 import React from 'react';
-import { 
-  TruckIcon, 
-  CurrencyDollarIcon, 
-  TruckIcon as DeliveryIcon,
-  WrenchScrewdriverIcon,
-  UserIcon
-} from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 const ServicesOverview: React.FC = () => {
   const services = [
     {
-      icon: TruckIcon,
+      image: '/images/road-assistance.png',
       name: 'Roadside Assistance'
     },
     {
-      icon: CurrencyDollarIcon,
+      image: '/images/car-buy-sell.png',
       name: 'Car Buy/Sell'
     },
     {
-      icon: DeliveryIcon,
+      image: '/images/quick-delivery.png',
       name: 'Quick Delivery'
     },
     {
-      icon: WrenchScrewdriverIcon,
+      image: '/images/spare-parts.png',
       name: 'Spare Parts'
     },
     {
-      icon: UserIcon,
+      image: '/images/machanic.png',
       name: 'Mechanic Booking'
     }
   ];
@@ -40,13 +34,19 @@ const ServicesOverview: React.FC = () => {
           {services.map((service, index) => (
             <div key={index} className="text-center group">
               <div className="flex flex-col items-center space-y-4">
-                {/* Icon - No background, larger size */}
-                <div className="flex items-center justify-center">
-                  <service.icon className="w-16 h-16 text-white group-hover:scale-110 transition-transform" />
+                {/* Image Icon - Equal height and width */}
+                <div className="flex items-center justify-center w-16 h-16">
+                  <Image
+                    src={service.image}
+                    alt={service.name}
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                  />
                 </div>
                 
-                {/* Service Name - Larger font size */}
-                <h3 className="text-base md:text-lg font-poppins font-medium leading-tight text-white">
+                {/* Service Name - Consistent alignment */}
+                <h3 className="text-base md:text-lg font-poppins font-medium leading-tight text-white text-center">
                   {service.name}
                 </h3>
               </div>

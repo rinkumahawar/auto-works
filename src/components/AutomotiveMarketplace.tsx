@@ -6,6 +6,7 @@ import {
   CheckCircleIcon, 
   LockClosedIcon 
 } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 const AutomotiveMarketplace: React.FC = () => {
   const marketplaceFeatures = [
@@ -44,38 +45,18 @@ const AutomotiveMarketplace: React.FC = () => {
           <div className="order-2 lg:order-1">
             <div className="relative">
               {/* SUV with Smartphones */}
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8 h-96 flex items-center justify-center">
-                <div className="text-center">
-                  {/* SUV Representation */}
-                  <div className="w-40 h-24 bg-gray-300 rounded-lg mx-auto mb-6 flex items-center justify-center">
-                    <svg className="w-20 h-16 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
-                    </svg>
-                  </div>
-                  
-                  {/* Two Smartphones */}
-                  <div className="flex justify-center space-x-4">
-                    <div className="w-16 h-24 bg-black rounded-xl p-1">
-                      <div className="w-full h-full bg-green-500 rounded-lg flex items-center justify-center">
-                        <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="w-16 h-24 bg-black rounded-xl p-1">
-                      <div className="w-full h-full bg-blue-500 rounded-lg flex items-center justify-center">
-                        <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <p className="text-sm text-gray-600 mt-4 font-inter">
-                    Marketplace apps for cars & parts
-                  </p>
-                </div>
+              <div className="relative">
+              {/* Marketplace Poster Image */}
+              <div className="rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/marketplace-poster.png"
+                  alt="Automotive Marketplace Poster"
+                  width={300}
+                  height={100}
+                  className="w-full"
+                />
               </div>
+            </div>
             </div>
           </div>
 

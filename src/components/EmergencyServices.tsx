@@ -1,32 +1,27 @@
 'use client';
 
 import React from 'react';
-import { 
-  WrenchIcon, 
-  BeakerIcon, 
-  BoltIcon, 
-  TruckIcon 
-} from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 const EmergencyServices: React.FC = () => {
   const emergencyServices = [
     {
-      icon: WrenchIcon,
+      image: '/images/tyre-replacement.svg',
       title: 'Tyre replacement',
       description: 'Professional tyre replacement service with quality tyres and expert fitting.'
     },
     {
-      icon: BeakerIcon,
+      image: '/images/fuel-replacement.svg',
       title: 'Fuel Delivery',
       description: 'Quick fuel delivery to get you back on the road in no time.'
     },
     {
-      icon: BoltIcon,
+      image: '/images/jump-start.png',
       title: 'Jump Start',
       description: 'Reliable jump start service for dead batteries with professional equipment.'
     },
     {
-      icon: TruckIcon,
+      image: '/images/towing-service.png',
       title: 'Towing Service',
       description: '24/7 towing service to the nearest garage or your preferred location.'
     }
@@ -50,9 +45,15 @@ const EmergencyServices: React.FC = () => {
           {emergencyServices.map((service, index) => (
             <div key={index} className="bg-white border-2 border-red-600 rounded-xl p-6 hover:shadow-lg transition-shadow group">
               <div className="text-center">
-                {/* Icon */}
-                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-700 transition-colors">
-                  <service.icon className="w-8 h-8 text-white" />
+                {/* Image Icon - Larger size */}
+                <div className="flex items-center justify-center mx-auto mb-4">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={80}
+                    height={80}
+                    className="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
+                  />
                 </div>
                 
                 {/* Title */}

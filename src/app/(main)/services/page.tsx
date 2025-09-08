@@ -1,13 +1,5 @@
 import React from 'react';
-import { 
-  WrenchScrewdriverIcon, 
-  CogIcon, 
-  ExclamationTriangleIcon,
-  BoltIcon,
-  CpuChipIcon,
-  BoltSlashIcon,
-  CircleStackIcon
-} from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 const ServicesPage: React.FC = () => {
   const services = [
@@ -15,49 +7,49 @@ const ServicesPage: React.FC = () => {
       id: 1,
       title: "DIAGNOSTIC SERVICE",
       description: "Minor repairs and tire changes at your location",
-      icon: WrenchScrewdriverIcon,
+      image: "/images/diaganostic-service.png",
       color: "bg-red-600"
     },
     {
       id: 2,
       title: "ROUTINE MAINTENANCE",
       description: "Minor repairs and tire changes at your location",
-      icon: CogIcon,
+      image: "/images/routine-maintanance.png",
       color: "bg-red-600"
     },
     {
       id: 3,
       title: "BREAK REPAIR SYSTEM",
       description: "Minor repairs and tire changes at your location",
-      icon: ExclamationTriangleIcon,
+      image: "/images/break-repair.png",
       color: "bg-red-600"
     },
     {
       id: 4,
       title: "ENGINE REPAIR SYSTEM",
       description: "Minor repairs and tire changes at your location",
-      icon: BoltIcon,
+      image: "/images/engine-repair.png",
       color: "bg-red-600"
     },
     {
       id: 5,
       title: "TRANSMISSION SERVICES",
       description: "Minor repairs and tire changes at your location",
-      icon: CpuChipIcon,
+      image: "/images/transmission-service.png",
       color: "bg-red-600"
     },
     {
       id: 6,
       title: "ELECTRICITY SYSTEM REPAIR",
       description: "Minor repairs and tire changes at your location",
-      icon: BoltSlashIcon,
+      image: "/images/electric-system-repair.png",
       color: "bg-red-600"
     },
     {
       id: 7,
       title: "TIRE SYSTEM",
       description: "Minor repairs and tire changes at your location",
-      icon: CircleStackIcon,
+      image: "/images/tyre-system.png",
       color: "bg-red-600"
     }
   ];
@@ -110,9 +102,15 @@ const ServicesPage: React.FC = () => {
                 key={service.id}
                 className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6 border border-gray-100"
               >
-                {/* Service Icon */}
-                <div className={`w-16 h-16 ${service.color} rounded-lg flex items-center justify-center mb-6 mx-auto`}>
-                  <service.icon className="w-8 h-8 text-white" />
+                {/* Service Image - No background, larger size */}
+                <div className="flex items-center justify-center mb-6 mx-auto">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={80}
+                    height={80}
+                    className="w-20 h-20 object-contain"
+                  />
                 </div>
 
                 {/* Service Title */}
